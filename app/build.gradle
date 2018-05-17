@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'map'
+            keyPassword '123456'
+            storeFile file('D:/aliubing/liuwebtest/android/AMapDemo/keystore/map.jks')
+            storePassword '123456'
+        }
+    }
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.abing.amap"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "arm64-v8a", "x86_64"
+        }
+        signingConfig signingConfigs.config
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+//            minifyEnabled true
+            multiDexEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            //移除无用的resource文件
+//            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+            signingConfig signingConfigs.config
+        }
+        debug {
+            multiDexEnabled true
+            signingConfig signingConfigs.config
+            renderscriptDebuggable true
+            debuggable true
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+//    lintOptions {
+//        checkReleaseBuilds false
+//        abortOnError false
+//    }
+    dexOptions {
+        incremental true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //3D地图
+    implementation 'com.amap.api:3dmap:latest.integration'
+    //导航
+    //    compile 'com.amap.api:navi-3dmap:latest.integration'
+    //    //定位
+    //    compile 'com.amap.api:location:latest.integration'
+    implementation 'com.android.support:multidex:1.0.2'
+    implementation project(':library')
+    implementation files('libs/Msc.jar')
+    implementation files('libs/dom4j-2.1.0.jar')
+}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+
+        <RelativeLayout
+            android:id="@+id/rela_dialog"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_homemerdialog">
+
+
+
+            <RelativeLayout
+                android:id="@+id/rela_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+              >
+
+                <LinearLayout
+                    android:id="@+id/linear_front"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+
+                    <Button
+                        android:id="@+id/but_xingChe"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="52dp"
+                        android:layout_marginRight="52dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/background_but_blue"
+                        android:text="行车"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+
+                    <Button
+                        android:id="@+id/but_cheXiang"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="52dp"
+                        android:layout_marginRight="52dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/background_but_blue"
+                        android:text="车厢"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+
+                    <Button
+                        android:id="@+id/but_youZhuan"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="52dp"
+                        android:layout_marginRight="52dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/background_but_blue"
+                        android:text="右转"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+                    <Button
+                        android:id="@+id/but_daoChe"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginLeft="52dp"
+                        android:layout_marginRight="52dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/background_but_blue"
+                        android:text="倒车"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/image_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/rela_dialog"
+            android:layout_marginRight="-20dp"
+            android:layout_marginTop="-20dp"
+            android:background="@mipmap/home_popup_btn_close" />
+    </RelativeLayout>
+</RelativeLayout>

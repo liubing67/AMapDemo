@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<update>
+	<android>
+		<versionCode>1</versionCode>
+		<versionName>V2.0.0</versionName>
+		<updateLog><![CDATA[1、新增定位；2、优化页面显示；3、修复已知BUG]]></updateLog>
+		<forceUpdate>1</forceUpdate>
+	</android>
+</update>
